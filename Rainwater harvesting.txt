@@ -1,0 +1,62 @@
+#include<iostream>
+
+using namespace std;
+
+int main() {
+  
+  int a[50];
+  int n;
+  cin>>n;
+  for(int i=0;i<n;++i){
+    cin>>a[i];
+  }
+  
+  int l[50]={0} , r[50]={0} , m1=0 ;
+  
+  for(int i=0;i<n;++i){
+    
+   
+   if(a[i] > m1){
+     m1 = a[i];
+     l[i] = m1;
+   }
+    else{
+      l[i] = m1;
+    }
+  }
+
+
+
+
+  int m2=0;
+
+  for(int i=n-1;i>=0;--i){
+    if(a[i]>m2){
+      m2 = a[i];
+      r[i] = m2;
+     }
+     else{
+       r[i] = m2;
+     }
+  }
+  
+  
+  //for(int i=0;i<n;++i){
+    //cout<<l[i]<<" ";
+  //}
+  
+  
+  //for(int i=0;i<n;++i){
+    //cout<<r[i]<<" ";
+  //}
+  
+  int water = 0;
+  for(int i=0;i<n;++i){
+    water += min( l[i] , r[i] ) - a[i];
+    
+  }
+  
+  cout<<water;
+  
+	return 0;
+}

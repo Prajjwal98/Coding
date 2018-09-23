@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+   
+   int n , a[10] , sum=0 , fact[10]={0} ;
+   cin>>n;
+   for(int i=0;i<n;++i){
+     cin>>a[i];
+   }
+   
+   /*for(int i=0;i<n;++i){
+     fact[i] = 1;
+     while(a[i]>0){
+       fact[i] *= a[i];
+       a[i]--;
+     }
+   }*/
+   
+   //Display factorial
+   //for(int i=0;i<n;++i){
+     //cout<<fact[i]<<" ";
+   //}
+   
+  for(int i=0;i<n;++i){ 
+     fact[i] = 1;
+  for(int j=1;j<=a[i];j++)
+
+    {
+
+        fact[i] = fact[i]*j;
+
+    }
+  }
+    
+  /* for(int i=0;i<n;++i){
+     cout<<fact[i]<<" ";
+   }*/
+  
+    for(int i=0;i<n;++i){
+      
+       sum += fact[i];
+      
+    }
+    cout<<(sum%107);
+   
+	return 0;
+}
